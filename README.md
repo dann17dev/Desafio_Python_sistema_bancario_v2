@@ -1,51 +1,74 @@
 # Sistema Bancário em Python
 
-Bem-vindo ao **Sistema Bancário em Python**! Esse projeto faz parte do **Bootcamp Vivo - Python AI Backend Developer**, mais especificamente do **Módulo 02 - Desafio Sistema Bancário v2**. Ele foi desenvolvido com o objetivo de aprender e aplicar os conceitos de programação em Python, criando um sistema bancário simples, mas funcional. Aqui, vamos gerenciar depósitos, saques, extratos, além de criar usuários e contas correntes.
+Bem-vindo ao **Sistema Bancário em Python**! Este projeto faz parte do **Bootcamp Vivo - Python AI Backend Developer**, especificamente do **Módulo 02 - Desafio Sistema Bancário v2**. Ele foi criado com o objetivo de praticar os conceitos de programação em Python, desenvolvendo um sistema bancário simples, mas funcional, com operações essenciais como depósitos, saques e consultas de extrato, além de funções de criação de usuários e contas correntes.
 
 ## Funcionalidades
 
 1. **Depositar**  
-   Você pode realizar depósitos no saldo da sua conta. O valor será adicionado ao saldo atual e registrado no extrato.
+   Permite a realização de depósitos no saldo da conta. O valor depositado é adicionado ao saldo e registrado no extrato.
 
 2. **Sacar**  
-   Aqui é onde você pode sacar um valor da sua conta, desde que respeite o limite de saques diários (máximo de 3) e o limite do saldo.
+   Realiza saques da conta, respeitando os limites de saldo disponível, limite de saques por transação e um máximo de 3 saques diários.
 
 3. **Extrato**  
-   Consulta todas as movimentações financeiras feitas na conta, mostrando tanto os depósitos quanto os saques.
+   Exibe todas as movimentações financeiras, incluindo depósitos e saques, bem como o saldo atual.
 
 4. **Criar Usuário**  
-   Cadastramento de um novo usuário no sistema com nome, CPF (somente números), data de nascimento e endereço. Importante: cada CPF pode ter apenas um cadastro.
+   Função para cadastro de um novo usuário com nome, CPF (somente números), data de nascimento e endereço completo. Um mesmo CPF não pode ser cadastrado mais de uma vez.
 
 5. **Criar Conta Corrente**  
-   Após criar um usuário, é possível associar uma conta corrente ao mesmo. Cada usuário pode ter mais de uma conta. A agência é fixa: `0001`, e o número da conta é gerado automaticamente.
+   Associa uma conta corrente a um usuário já cadastrado. A agência é fixa (`0001`), e o número da conta é gerado automaticamente. Um usuário pode ter mais de uma conta.
 
 6. **Listar Contas**  
-   Lista todas as contas criadas, mostrando o número da conta, agência e o usuário vinculado.
+   Exibe todas as contas criadas no sistema, listando o número da conta, a agência e o usuário associado.
+
+## Alterações no Menu
+
+Uma das principais mudanças feitas foi a substituição do menu numérico antigo por um menu com letras para facilitar a navegação:
+
+- De:
+  - `[1] Depositar`
+  - `[2] Sacar`
+  - `[3] Extrato`
+  - `[4] Limite de Saque por Transação`
+  - `[5] Limite de Saques Diários Restantes`
+  - `[0] Sair`
+  
+- Para:
+  - `[d] Depositar`
+  - `[s] Sacar`
+  - `[e] Extrato`
+  - `[c] Criar Usuário`
+  - `[cc] Criar Conta Corrente`
+  - `[l] Listar Contas`
+  - `[q] Sair`
+
+Além disso, foram implementadas todas as funcionalidades solicitadas no desafio, como a criação de usuários e contas correntes.
 
 ## Como Utilizar
 
-Ao rodar o programa, será exibido um menu com as opções:
+Ao executar o programa, será exibido um menu com as seguintes opções:
 
 - `[d] Depositar`
 - `[s] Sacar`
 - `[e] Extrato`
 - `[c] Criar Usuário`
 - `[cc] Criar Conta Corrente`
-- `[lc] Listar Contas`
+- `[l] Listar Contas`
 - `[q] Sair`
 
 ### Exemplo de Fluxo
 
-1. Primeiro, crie um usuário com a opção `[c] Criar Usuário`.
-2. Depois, associe uma conta a esse usuário com a opção `[cc] Criar Conta Corrente`.
-3. Agora, você já pode fazer depósitos, saques e conferir o extrato.
+1. Crie um usuário com a opção `[c] Criar Usuário`.
+2. Associe uma conta a esse usuário com a opção `[cc] Criar Conta Corrente`.
+3. Realize depósitos, saques e consulte o extrato conforme necessário.
 
 ### Validações Implementadas
 
-- **Saques**: Você só pode fazer até 3 saques diários e respeitar o limite do saldo e o valor máximo de saque.
-- **Depósitos**: Só aceitamos valores positivos.
+- **Saques**: São permitidos até 3 saques diários. O valor do saque não pode exceder o saldo disponível ou o limite por transação.
+- **Depósitos**: Somente valores positivos são aceitos.
 - **Usuários**: Não é permitido cadastrar dois usuários com o mesmo CPF.
 
-## O que aprendi até aqui?
+## O que Aprendi Até Aqui?
 
-Durante o desenvolvimento deste projeto, aprendi a organizar melhor o código usando funções, separar responsabilidades e validar dados de forma mais eficiente. Também foi um ótimo exercício para entender como estruturar um sistema com múltiplas funcionalidades.
+Durante o desenvolvimento deste sistema bancário, aprendi a organizar melhor o código através do uso de funções, além de validar dados de forma mais eficiente. O projeto foi uma excelente oportunidade para praticar conceitos como passagem de argumentos, retornos de função, e a construção de um fluxo lógico que abrange múltiplas funcionalidades de um sistema.
